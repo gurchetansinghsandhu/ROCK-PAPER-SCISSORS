@@ -1,0 +1,26 @@
+# ROCK PAPER SCISSORS
+
+import random                                               # USING IMPORT RANDOM MODULE 
+
+emoji = { "r" : "🪨", "p" : "📄", "s" : "✂️" }            # MAKING USE OF EMOJIES TO CREATE THE CODE MORE ATTRATCTIVE
+choices = ("r", "p", "s")
+
+user_choice = input("rock, paper or scissors (r/p/s): ")    # IMPLEMENTING USER CHOICE 
+if user_choice not in choices:
+    print("invalid choice!")
+
+computer_choice = random.choice(choices)                    # LET COMPUTER CHOOSE IT'S CHOICE 
+
+print(f"you choose {emoji[user_choice]}")                  
+print(f"computer choose {emoji[computer_choice]}")
+
+if user_choice == computer_choice:                          # TIE CASE SCENERIO
+    print("TIE")
+elif (                                                      # WINNING STATEMENT CONDITIONS 
+    (user_choice == "r" and computer_choice == "s") or
+    (user_choice == "p" and computer_choice == "r") or
+    (user_choice == "s" and computer_choice == "p")):
+    print("YOU WON  HURRAY!!!")
+
+else:                                                       # LOSING CASE
+    print("YOU LOSE")
